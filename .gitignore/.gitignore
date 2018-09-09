@@ -1,0 +1,49 @@
+// makeing a cross out of '*' and an x out of the alphabet
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+	int numLetters = 26;
+	char letter1 = 'a';
+	int i; // rows
+	int j; // cols
+	for (i = 1; i <= numLetters; i++) {
+		for (j = 1; j <= 2 * numLetters + 1; j++) {
+			if (i == j || j == (numLetters * 2 + 2 - i)) {
+				cout << letter1;
+			}
+			else if (j == 2 * numLetters / 2 + 1) {
+				cout << "*";
+			}
+			else {
+				cout << " ";
+			}
+		}
+		cout << endl;
+		letter1++;
+	}
+	cout << setfill('*') << setw(53) << "" << endl; //create a line out of stars
+
+	for (i = numLetters; i >= 1; i--) {
+		letter1--;
+		for (j = 1; j <= 2 * numLetters + 1; j++) {
+			if (i == j || j == (numLetters * 2 + 2 - i)) {
+				cout << letter1;
+			}
+			else if (j == 27) {
+				cout << "*";
+			}
+			else {
+				cout << " ";
+			}
+		}
+		cout << endl;
+
+	}
+	system("pause");
+	return 0;
+}
